@@ -9,15 +9,15 @@
 </head>
 <body >
   <header class="main">
-    <!-- El usuario manda -->
-    <div class="toggle">
-      <img src="images/sun.png" alt="Ícono del sol" srcset="">
-      <input type="checkbox" name="dark-toggle" id="dark-toggle">
-      <label for="dark-toggle"></label>
-      <img src="images/moon.png" alt="Ícono del sol" srcset="">
+    <div class="toggle-container">
+      <div class="toggle">
+        <img src="images/sun.png" alt="Ícono del sol" srcset="">
+        <input type="checkbox" name="dark-toggle" id="dark-toggle">
+        <label for="dark-toggle"></label>
+        <img src="images/moon.png" alt="Ícono de la luna" srcset="">
+      </div>
     </div>
     
-    <!-- <button class="toggle">Toggle</button> -->
     <div>
       <img src="images/gobierno.gif" alt="Ilustración de una imagen de Ciberseguridad" height="300" srcset="">
       <h1 class="title">Carlos Muñoz Herrera</h1>
@@ -31,7 +31,7 @@
       <h2 class="subtitle">Pagina web HOME EASY</h2>
       <article class="project card padding">
         <img src="images/projects/homeeasy.gif" alt="Captura de pantalla" srcset="">
-        <div>
+        <div class="project-content">
           <h3>Home Easy</h3>
           <p>Página web para realizar cotizaciones de hormigón por metro cubico, se implementaron múltiples páginas, para usuarios y administrador.</p>
           <h4>Tecnologías utilizadas</h4>
@@ -51,7 +51,7 @@
       <h2 class="subtitle">Informe análisis </h2>
       <article class="project card padding">
         <img src="images/projects/informe1.gif" alt="Captura de pantalla" srcset="">
-        <div>
+        <div class="project-content">
           <h3></h3>
           <p>Informe de análisis realizado a la página web de HOME EASY</p>
           <h4>Herramientas utilizadas </h4>
@@ -70,7 +70,7 @@
     <h2 class="subtitle">Informe implementador </h2>
     <article class="project card padding">
       <img src="images/projects/implementador.gif" alt="Captura de pantalla" srcset="">
-      <div>
+      <div class="project-content">
         <h3></h3>
         <p>Informe de implementador realizado durante el curso de ciberseguridad para el proyecto de HOME EASY</p>
         <h4>Herramientas utilizadas </h4>
@@ -85,12 +85,12 @@
     </article>
   </div>
 </section>
-<section>
-  <div style="margin: 0 auto; text-align: center; margin-bottom: 10px;">
-    <a href="https://github.com/Carlos-m-h/proyecto-pagina-web/blob/main/curriculum/curriculum.md" style="color: #FFFFFF;" target="_blank">VER CURRICULUM FORMATO MARKDOWN</a>
+<section class="curriculum-links">
+  <div>
+    <a href="https://github.com/Carlos-m-h/proyecto-pagina-web/blob/main/curriculum/curriculum.md" target="_blank">VER CURRICULUM FORMATO MARKDOWN</a>
   </div>
-  <div style="margin: 0 auto; text-align: center;">
-    <a href="images/projects/curriculumcarlosmuñoz.pdf" style="color: #FFFFFF;" target="_blank">VER CURRICULUM EN FORMATO PDF</a> 
+  <div>
+    <a href="images/projects/curriculumcarlosmuñoz.pdf" target="_blank">VER CURRICULUM EN FORMATO PDF</a> 
   </div>
 </section>
 <script src="javascripts/main.js"></script>
