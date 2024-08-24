@@ -5,109 +5,172 @@
   --blue-accent: #546de5;
   --pink: #f8a5c2;
   --dark-grey: #596275;
-  --black: #2C3A47; /* El valor de una custom property incluye el espacio en blanco */
+  --black: #2C3A47;
   --white: #f5f6fa;
   --lightGrey: #f0efeb;
   --radius: 10px;
   --card-bg: var(--lightGrey);
 }
 
-body{
+body {
   --black: #2C3A47;
   font-family: 'Nunito', sans-serif;
   background-color: var(--white);
+  font-size: 16px;
 }
 
-img{
+img {
   max-width: 100%;
+  height: auto;
 }
 
-
-header.main{
+header.main {
   background-color: var(--blue);
   color: var(--white);
-  padding:1em;
+  padding: 1em;
   min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
-header.main .toggle{
-  justify-self: flex-end;
+.toggle-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1em;
 }
 
-header.main h1{
-  margin:0;
-}
-
-.title{
-  font-size: 3rem;
-}
-
-.subtitle{
-  font-size: 2rem;
-}
-
-.main-container{
-  width: 52rem;
-  max-width: 100%;
+header.main > div:not(.toggle-container) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 52rem;
   margin: 0 auto;
 }
 
-.padding-y-100{
-  padding-top: 6.25rem;
-  padding-bottom: 6.25rem;
+header.main img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1em;
 }
 
-.padding{
-  padding-inline-start: 1.25rem;
-  padding-inline-end: 1.25rem;
-
-  padding-block-start: 1rem;
-  padding-block-end: 1rem;
+.title {
+  font-size: 2.5rem;
+  margin: 0.5em 0;
 }
 
-.project{
-  display: grid;
-  grid-template-columns: 300px minmax(0,1fr);
-  column-gap: 1em;
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 1em;
 }
 
-.project img{
-  align-self: center;
+header.main button {
+  margin-top: 1em;
 }
 
-.card{
-  background-color: var(--card-bg);
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 2rem;
+  }
+}
+
+.main-container {
+  width: 100%;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.padding-y-100 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  align-items: center;
+  margin-bottom: 2em;
+  text-align: left;
+}
+
+.project img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
   border-radius: var(--radius);
-  box-shadow:  20px 20px 60px var(--card-bg),
-             -20px -20px 60px var(--card-bg);
 }
 
-#dark-toggle{
+.project-content {
+  width: 100%;
+}
+
+.main-container h2 {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.curriculum-links {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.curriculum-links a {
+  display: inline-block;
+  margin: 0.5em;
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.5em 1em;
+  background-color: var(--blue-accent);
+  border-radius: var(--radius);
+}
+
+@media screen and (min-width: 768px) {
+  .project {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .project img {
+    flex: 0 0 300px;
+  }
+
+  .project-content {
+    flex: 1;
+  }
+}
+
+#dark-toggle {
   display: none;
 }
 
-#dark-toggle + label{
+#dark-toggle + label {
   cursor: pointer;
   --toggleHeight: 1.5rem;
   display: inline-block;
-  width: calc(var(--toggleHeight )* 2);
-  height:var(--toggleHeight);
+  width: calc(var(--toggleHeight) * 2);
+  height: var(--toggleHeight);
   border-radius: var(--radius);
   background-color: var(--blue-accent);
   position: relative;
   margin-right: 0.4rem;
 }
 
-#dark-toggle + label::after{
-  --size:  calc(var(--toggleHeight) * 1.33);
+#dark-toggle + label::after {
+  --size: calc(var(--toggleHeight) * 1.33);
   position: absolute;
   content: "";
-  width:var(--size);
-  height:var(--size);
+  width: var(--size);
+  height: var(--size);
   border-radius: 50%;
   background-color: var(--pink);
   left: calc((var(--size) - var(--toggleHeight)) / 2 * -1);
@@ -115,33 +178,33 @@ header.main h1{
   transition: all 0.2s ease-in;
 }
 
-#dark-toggle:checked + label::after{
-  left:calc(100% - (var(--size) - var(--toggleHeight) / 2));
+#dark-toggle:checked + label::after {
+  left: calc(100% - (var(--size) - var(--toggleHeight) / 2));
 }
 
 @media (prefers-color-scheme: dark) {
-  body:not(.force-light){
+  body:not(.force-light) {
     --blue: #071e3d;
     --blue-accent: #546de5;
     --pink: #f8a5c2;
     --dark-grey: #596275;
     --black: #2C3A47;
     --white: #f6e9e9;
-    --radus: 10px;
+    --radius: 10px;
     --card-bg: var(--blue);
     background-color: var(--black);
     color: var(--white);
-  }  
+  }
 }
 
-body.force-dark{
+body.force-dark {
   --blue: #071e3d;
   --blue-accent: #546de5;
   --pink: #f8a5c2;
   --dark-grey: #596275;
   --black: #2C3A47;
   --white: #f6e9e9;
-  --radus: 10px;
+  --radius: 10px;
   --card-bg: var(--blue);
   background-color: var(--black);
   color: var(--white);
